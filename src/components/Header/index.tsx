@@ -1,8 +1,12 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Switch from 'react-switch';
+
 import { Container } from './styles';
+import { useTheme } from '../hooks/useTheme';
 
 export function Header() {
+  const { theme, switchTheme } = useTheme();
   const { asPath } = useRouter();
 
   return (
@@ -32,6 +36,17 @@ export function Header() {
           <a className={asPath === '/#pricing' ? 'active' : ''}>ORÇAMENTO</a>
         </Link>
       </nav>
+
+      <Switch
+        checked={theme.title === 'dark'}
+        onChange={switchTheme}
+        checkedIcon={false}
+        uncheckedIcon={false}
+        onColor={theme.colors.purple}
+        onHandleColor={theme.colors.background_primary}
+        offColor={theme.colors.background_secondary}
+        offHandleColor={theme.colors.purple}
+      />
     </Container>
   );
 }

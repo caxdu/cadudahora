@@ -1,16 +1,16 @@
 import { DefaultTheme } from 'styled-components';
 
-const lightTheme: DefaultTheme = {
-  title: 'light',
+const darkTheme: DefaultTheme = {
+  title: 'dark',
 
   colors: {
-    background_primary: '#FFF',
-    background_secondary: '#FAFAFA',
-    subtitle: '#575757',
-    text: '#1A1A1A',
-    text_detail: '#8C8C8C',
-    shape: '#E7E7E7',
-    shape_border: '#BCBCBC',
+    background_primary: '#131219',
+    background_secondary: '#212121',
+    subtitle: '#FFFFFF',
+    text: '#FFFFFF',
+    text_detail: '#D7D7D7',
+    shape: '#575757',
+    shape_border: '#575757',
     purple: '#AA00FE',
   },
 
@@ -60,4 +60,4 @@ const lightTheme: DefaultTheme = {
   },
 };
 
-export default lightTheme;
+export default darkTheme;

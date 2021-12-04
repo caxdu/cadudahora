@@ -1,14 +1,12 @@
 import { AppProps } from 'next/app';
-import { ThemeProvider } from 'styled-components';
-import Global from '../styles/Global';
-import light from '../styles/themes/light';
+import { ThemeProvider as ThemeSwitcherProvider } from '../contexts/theme';
+import Appcontent from './_appcontent';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp(props: AppProps) {
   return (
-    <ThemeProvider theme={light}>
-      <Global />
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <ThemeSwitcherProvider>
+      <Appcontent {...props} />
+    </ThemeSwitcherProvider>
   );
 }
 

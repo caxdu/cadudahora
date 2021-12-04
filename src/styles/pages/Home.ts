@@ -8,7 +8,7 @@ export const Container = styled.div``;
 
 export const HomeSection = styled.section`
   padding-top: 90px;
-  height: calc(100vh - 90px);
+  height: 100vh;
   padding-left: 9.125rem;
   display: flex;
   align-items: center;

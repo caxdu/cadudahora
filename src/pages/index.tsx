@@ -9,6 +9,8 @@ import { Header } from '../components/Header';
 import {
   Container,
   HomeSection,
+  PortfolioGrid,
+  PortfolioSection,
   SliderIndicator,
   WhoAmISection,
 } from '../styles/pages/Home';
@@ -116,6 +118,27 @@ export default function Home() {
           </footer>
         </main>
       </WhoAmISection>
+
+      <PortfolioSection id="portfolio">
+        <h1>&lt; Portfólio</h1>
+        <h2>É COMO UM ÁLBUM DE FAMÍLIA</h2>
+
+        <PortfolioGrid>
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
+        </PortfolioGrid>
+
+        <footer>
+          <p>
+            Você também pode <br /> conferir outros projetos:
+          </p>
+          <button type="button">CONFERIR PROJETOS</button>
+        </footer>
+      </PortfolioSection>
     </Container>
   );
 }

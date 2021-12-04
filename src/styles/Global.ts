@@ -5,6 +5,7 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: color 0.6s, background-color 0.6s;
   }
 
   html {

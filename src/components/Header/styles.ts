@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
+  position: fixed;
+  top: 0;
+  width: 100%;
   padding: 0 9.125rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 90px;
+  z-index: 10;
+  background: ${props => props.theme.colors.background_primary};
 
   img {
     width: 75px;

@@ -7,6 +7,7 @@ interface SlideIndicatorProps {
 export const Container = styled.div``;
 
 export const HomeSection = styled.section`
+  padding-top: 90px;
   height: calc(100vh - 90px);
   padding-left: 9.125rem;
   display: flex;
@@ -16,7 +17,7 @@ export const HomeSection = styled.section`
   main {
     h1 {
       width: 40.875rem;
-      ${props => props.theme.colors.text};
+      color: ${props => props.theme.colors.text};
       ${props => props.theme.fonts.title};
     }
 

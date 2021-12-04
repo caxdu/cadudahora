@@ -17,17 +17,13 @@ declare module 'styled-components' {
 
     fonts: {
       title: string;
-      nav: string;
+      section_title: string;
       subtitle: string;
-      default: string;
-      button_primary: string;
-      button_secondary: string;
-      form_title: string;
-      input: {
-        title: string;
-        subtitle: string;
-        value: string;
-      };
+      call_to_action: string;
+      button: string;
+      project_subtitle: string;
+      paragraph: string;
+      nav: string;
     };
   }
 }

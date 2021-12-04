@@ -34,7 +34,7 @@ export const HomeSection = styled.section`
         align-items: center;
         justify-content: center;
         gap: 0.875rem;
-        ${props => props.theme.fonts.button_secondary};
+        ${props => props.theme.fonts.button};
 
         &:nth-child(1) {
           border: 0;
@@ -149,7 +149,7 @@ export const WhoAmISection = styled.section`
 
     p {
       margin-top: 3.125rem;
-      ${props => props.theme.fonts.default};
+      ${props => props.theme.fonts.paragraph};
       color: ${props => props.theme.colors.text};
       width: 62.625rem;
     }

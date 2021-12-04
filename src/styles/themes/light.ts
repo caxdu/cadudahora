@@ -1,4 +1,6 @@
-export default {
+import { DefaultTheme } from 'styled-components';
+
+const lightTheme: DefaultTheme = {
   title: 'dark',
 
   colors: {
@@ -14,63 +16,48 @@ export default {
 
   fonts: {
     title: `
-      font-family: 'Poppins';
-      font-weight: 'bold';
+      font-family: Poppins;
+      font-weight: bold;
       font-size: 3.375rem;
     `,
-    nav: `
-      font-family: 'Poppins';
-      font-weight: 'bold';
-      font-size: 1.25rem;
+    section_title: `
+      font-family: Poppins;
+      font-weight: bold;
+      font-size: 3.375rem;
+      line-height: 122.5%;
     `,
     subtitle: `
-      font-family: 'Inter';
-      font-size: 1.5625rem;
-    `,
-    default: `
-      font-family: 'Inter';
+      font-family: Inter;
       font-size: 1.5625rem;
       line-height: 140%;
     `,
-    button_primary: `
-      font-family: 'Inter';
+    project_subtitle: `
+      font-family: Poppins;
+      font-weight: bold;
+      font-size: 1.75rem;
+      line-height: 108.5%%;
+    `,
+    call_to_action: `
+      font-family: Poppins;
+      font-weight: 500;
+      font-size: 1.75rem;
+    `,
+    button: `
+      font-family: Inter;
+      font-weight: 500;
+      font-size: 1.5rem;
+    `,
+    paragraph: `
+      font-family: Inter;
       font-size: 1.5625rem;
-      font-weight: '600';
+      line-height: 140%;
     `,
-    button_secondary: `
-      font-family: 'Inter';
-      font-size: 1.25rem;
-      font-weight: '600';
+    nav: `
+      font-family: Inter;
+      font-weight: bold;
+      font-size: 1.5rem;
     `,
-    form_title: `
-      font-family: 'Poppins';
-      font-weight: 'bold';
-      font-size: 1.875rem;
-      line-height: 1.5rem;
-      letter-spacing: 0.75px;
-    `,
-    input: {
-      title: `
-        font-family: 'Poppins';
-        font-size: 1.25rem;
-        font-weight: '500';
-        line-height: 24px;
-        letter-spacing: 0.75px;
-      `,
-      subtitle: `
-        font-family: 'Poppins';
-        font-weight: '500';
-        font-size: 0.9375rem;
-        line-height: 24px;
-        letter-spacing: 0.75px;
-      `,
-      value: `
-        font-family: 'Poppins';
-        font-weight: '500';
-        font-size: 0.9375rem;
-        line-height: 24px;
-        letter-spacing: 0.75px;
-      `,
-    },
   },
 };
+
+export default lightTheme;

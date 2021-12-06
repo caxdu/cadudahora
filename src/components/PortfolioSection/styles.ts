@@ -22,6 +22,12 @@ export const Container = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: -25px;
+    }
 
     p {
       text-align: center;

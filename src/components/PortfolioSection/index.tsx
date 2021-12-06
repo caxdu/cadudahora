@@ -16,6 +16,7 @@ export function PortfolioSection() {
       </PortfolioGrid>
 
       <footer>
+        <img src="plus.svg" alt="plus" />
         <p>
           Você também pode <br /> conferir outros projetos:
         </p>

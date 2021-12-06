@@ -20,6 +20,10 @@ export default function Home() {
       <PortfolioSection />
 
       <ContactSection />
+
+      <footer>
+        <p>Carlos Eduardo da Hora Copyright @ 2021</p>
+      </footer>
     </Container>
   );
 }

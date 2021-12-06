@@ -2,7 +2,7 @@ import { Container } from './styles';
 
 export function ContactSection() {
   return (
-    <Container>
+    <Container id="contact">
       <h1>
         <strong>&lt;</strong> Quer um Orçamento?
       </h1>

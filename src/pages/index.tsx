@@ -6,7 +6,7 @@ import { PortfolioSection } from '../components/PortfolioSection';
 import { Container } from '../styles/pages/Home';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { ContactSection } from '../components/ContactSection';
+import { PricingSection } from '../components/PricingSection';
 
 export default function Home() {
   return (
@@ -19,7 +19,7 @@ export default function Home() {
 
       <PortfolioSection />
 
-      <ContactSection />
+      <PricingSection />
 
       <footer>
         <p>Carlos Eduardo da Hora Copyright @ 2021</p>

@@ -28,8 +28,8 @@ export function Header() {
           <a className={asPath === '/#portfolio' ? 'active' : ''}>PORTFÓLIO</a>
         </Link>
 
-        <Link href="#contact">
-          <a className={asPath === '/#contact' ? 'active' : ''}>CONTATO</a>
+        <Link href="#pricing">
+          <a className={asPath === '/#pricing' ? 'active' : ''}>ORÇAMENTO</a>
         </Link>
       </nav>
 

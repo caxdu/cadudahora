@@ -1,8 +1,8 @@
 import { Container } from './styles';
 
-export function ContactSection() {
+export function PricingSection() {
   return (
-    <Container id="contact">
+    <Container id="pricing">
       <h1>
         <strong>&lt;</strong> Quer um Orçamento?
       </h1>

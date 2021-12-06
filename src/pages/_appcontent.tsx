@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
-import { useTheme } from '../components/hooks/useTheme';
+import { useTheme } from '../hooks/useTheme';
 
 import Global from '../styles/Global';
 

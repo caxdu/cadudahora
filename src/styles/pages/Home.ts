@@ -41,7 +41,7 @@ export const HomeSection = styled.section`
           border: 0;
           background: ${props => props.theme.colors.purple};
           color: ${props => props.theme.colors.background_primary};
-          transition: filter 0.2s;
+          transition: filter 0.2s, color 0.4s;
 
           &:hover {
             filter: brightness(0.8);

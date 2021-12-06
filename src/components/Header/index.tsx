@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Switch from 'react-switch';
 
 import { Container } from './styles';
-import { useTheme } from '../hooks/useTheme';
+import { useTheme } from '../../hooks/useTheme';
 
 export function Header() {
   const { theme, switchTheme } = useTheme();
@@ -30,10 +30,6 @@ export function Header() {
 
         <Link href="#contact">
           <a className={asPath === '/#contact' ? 'active' : ''}>CONTATO</a>
-        </Link>
-
-        <Link href="#pricing">
-          <a className={asPath === '/#pricing' ? 'active' : ''}>ORÇAMENTO</a>
         </Link>
       </nav>
 

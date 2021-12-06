@@ -6,6 +6,7 @@ import { PortfolioSection } from '../components/PortfolioSection';
 import { Container } from '../styles/pages/Home';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { ContactSection } from '../components/ContactSection';
 
 export default function Home() {
   return (
@@ -17,6 +18,8 @@ export default function Home() {
       <WhoAmISection />
 
       <PortfolioSection />
+
+      <ContactSection />
     </Container>
   );
 }

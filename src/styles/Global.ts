@@ -20,6 +20,19 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${props => props.theme.colors.purple};
+    border-radius: 57px;
+  }
+
   @media (max-width: 1080px) {
     html {
       font-size: 93.75%;

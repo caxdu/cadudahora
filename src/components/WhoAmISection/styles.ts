@@ -15,14 +15,16 @@ export const Container = styled.section`
 
     img {
       position: absolute;
-      left: -70px;
+      left: -60px;
       bottom: 0;
+      height: 100%;
     }
 
     div {
       height: 100%;
       width: 100%;
-      background: gray;
+      background: url('cadu.jpg') no-repeat;
+      background-size: cover;
     }
   }
 

@@ -7,7 +7,9 @@ import { useTheme } from '../../hooks/useTheme';
 
 export function Header() {
   const { theme, switchTheme } = useTheme();
-  const { asPath } = useRouter();
+  const { asPath, ...rest } = useRouter();
+
+  console.log({ ...rest });
 
   return (
     <Container>

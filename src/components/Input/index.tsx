@@ -1,4 +1,11 @@
-import { InputHTMLAttributes, useCallback, useRef, useState } from 'react';
+import { useField } from '@unform/core';
+import {
+  InputHTMLAttributes,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { Container } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -15,6 +22,7 @@ export function Input({
   isRequired = true,
   ...rest
 }: InputProps) {
+  const { fieldName, registerField } = useField(name);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [isFilled, setIsFilled] = useState(false);
@@ -22,6 +30,14 @@ export function Input({
   const handleInputBlur = useCallback(() => {
     setIsFilled(!!inputRef.current?.value);
   }, []);
+
+  useEffect(() => {
+    registerField({
+      name: fieldName,
+      ref: inputRef.current,
+      path: 'value',
+    });
+  }, [fieldName, registerField]);
 
   return (
     <Container isFilled={isFilled}>

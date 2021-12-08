@@ -7,7 +7,7 @@ export default function pricing() {
     <Container>
       <Header />
 
-      <Content onSubmit={() => console.log('submitou')}>
+      <Content onSubmit={data => console.log(data)}>
         <h1>&lt; Quer um orçamento?</h1>
         <h2>ACEITA UM SUCO ENQUANTO CONVERSAMOS?</h2>
 
@@ -43,6 +43,16 @@ export default function pricing() {
             placeholder="Diretor de Tecnologia"
           />
         </fieldset>
+
+        <fieldset>
+          <legend>SOBRE O PROJETO</legend>
+
+          <Input type="radio" title="teste" name="teste" value="teste 1" />
+          <Input type="radio" title="teste" name="teste" value="teste 2" />
+          <Input type="radio" title="teste" name="teste" value="teste 3" />
+        </fieldset>
+
+        <button type="submit">subimitar</button>
       </Content>
     </Container>
   );

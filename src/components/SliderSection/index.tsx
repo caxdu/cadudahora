@@ -1,17 +1,31 @@
+import { useRouter } from 'next/router';
+import { useCallback } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
 import { Carousel } from 'react-responsive-carousel';
 import { Container, SliderIndicator } from './styles';
 
 export function SliderSection() {
+  const { push } = useRouter();
+
+  const handleSeeProjects = useCallback(() => {
+    push('/#portfolio');
+  }, [push]);
+
+  const handleSeePricing = useCallback(() => {
+    push('/pricing');
+  }, [push]);
+
   return (
     <Container id="start">
       <main>
         <h1>Juntos vamos realizar o seu projeto mais DaHora!</h1>
 
         <footer>
-          <button type="button">ORÇAMENTO</button>
+          <button type="button" onClick={handleSeePricing}>
+            ORÇAMENTO
+          </button>
 
-          <button type="button">
+          <button type="button" onClick={handleSeeProjects}>
             {' '}
             <FiChevronDown size={20} />
             VER PROJETOS :)

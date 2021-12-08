@@ -60,6 +60,11 @@ export const Container = styled.section`
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: background 0.2s;
+
+        &:hover {
+          background: ${props => props.theme.colors.purple};
+        }
 
         svg {
           color: ${props => props.theme.colors.shape};

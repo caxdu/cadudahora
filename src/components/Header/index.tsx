@@ -7,16 +7,14 @@ import { useTheme } from '../../hooks/useTheme';
 
 export function Header() {
   const { theme, switchTheme } = useTheme();
-  const { asPath, ...rest } = useRouter();
-
-  console.log({ ...rest });
+  const { asPath } = useRouter();
 
   return (
     <Container>
       <img src="logo.svg" alt="Dahora logo" />
 
       <nav>
-        <Link href="#start">
+        <Link href="/#start">
           <a className={asPath === '/' || asPath === '/#start' ? 'active' : ''}>
             INÍCIO
           </a>
@@ -31,7 +29,13 @@ export function Header() {
         </Link>
 
         <Link href="#pricing">
-          <a className={asPath === '/#pricing' ? 'active' : ''}>ORÇAMENTO</a>
+          <a
+            className={
+              asPath === '/#pricing' || asPath === '/pricing' ? 'active' : ''
+            }
+          >
+            ORÇAMENTO
+          </a>
         </Link>
       </nav>
 

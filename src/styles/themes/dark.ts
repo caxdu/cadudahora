@@ -30,6 +30,7 @@ const darkTheme: DefaultTheme = {
       font-family: Inter;
       font-size: 1.5625rem;
       line-height: 140%;
+      font-weight: normal;
     `,
     project_subtitle: `
       font-family: Poppins;

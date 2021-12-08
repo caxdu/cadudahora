@@ -1,12 +1,36 @@
+import { InputHTMLAttributes, useCallback, useRef, useState } from 'react';
 import { Container } from './styles';
 
-export function Input() {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  name: string;
+  title: string;
+  subtitle?: string;
+  isRequired?: boolean;
+}
+
+export function Input({
+  name,
+  title,
+  subtitle,
+  isRequired = true,
+  ...rest
+}: InputProps) {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const [isFilled, setIsFilled] = useState(false);
+
+  const handleInputBlur = useCallback(() => {
+    setIsFilled(!!inputRef.current?.value);
+  }, []);
+
   return (
-    <Container>
+    <Container isFilled={isFilled}>
       <p>
-        Qual o seu nome?<span>*</span>
+        {title}
+        {isRequired && <span>*</span>}
       </p>
-      <input type="text" />
+      {subtitle && <span>{subtitle}</span>}
+      <input ref={inputRef} name={name} onBlur={handleInputBlur} {...rest} />
     </Container>
   );
 }

@@ -12,6 +12,7 @@ const lightTheme: DefaultTheme = {
     shape: '#E7E7E7',
     shape_border: '#BCBCBC',
     purple: '#AA00FE',
+    placeholder: '#D7D7D7',
   },
 
   fonts: {
@@ -57,6 +58,13 @@ const lightTheme: DefaultTheme = {
       font-family: Inter;
       font-weight: bold;
       font-size: 1.5rem;
+    `,
+    placeholder: `
+      font-family: Poppins;
+      font-weight: 500;
+      font-size: 0.9375rem;
+      line-height: 24px;
+      letter-spacing: 0.75px;
     `,
   },
 };

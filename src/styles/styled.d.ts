@@ -13,6 +13,7 @@ declare module 'styled-components' {
       shape: string;
       shape_border: string;
       purple: string;
+      placeholder: string;
     };
 
     fonts: {
@@ -24,6 +25,7 @@ declare module 'styled-components' {
       project_subtitle: string;
       paragraph: string;
       nav: string;
+      placeholder: string;
     };
   }
 }

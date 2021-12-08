@@ -12,6 +12,7 @@ const darkTheme: DefaultTheme = {
     shape: '#575757',
     shape_border: '#575757',
     purple: '#AA00FE',
+    placeholder: '#D7D7D7',
   },
 
   fonts: {
@@ -57,6 +58,13 @@ const darkTheme: DefaultTheme = {
       font-family: Inter;
       font-weight: bold;
       font-size: 1.5rem;
+    `,
+    placeholder: `
+      font-family: Poppins;
+      font-weight: 500;
+      font-size: 0.9375rem;
+      line-height: 24px;
+      letter-spacing: 0.75px;
     `,
   },
 };

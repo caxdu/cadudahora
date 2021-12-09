@@ -16,7 +16,13 @@ interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
   isRequired?: boolean;
 }
 
-export function Radio({ name, title, options, isRequired = true }: RadioProps) {
+export function Radio({
+  name,
+  title,
+  options,
+  isRequired = true,
+  ...rest
+}: RadioProps) {
   const inputRefs = useRef<HTMLInputElement[]>([]);
   const { fieldName, registerField } = useField(name);
 
@@ -53,6 +59,7 @@ export function Radio({ name, title, options, isRequired = true }: RadioProps) {
             id={option.value}
             value={option.value}
             onChange={() => setSelected(index)}
+            {...rest}
           />
           {option.label}
         </label>

@@ -12,7 +12,7 @@ const darkTheme: DefaultTheme = {
     shape: '#575757',
     shape_border: '#575757',
     purple: '#AA00FE',
-    placeholder: '#D7D7D7',
+    placeholder: '#878787',
   },
 
   fonts: {

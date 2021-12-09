@@ -30,15 +30,15 @@ export const Container = styled.div<ContainerProps>`
     background: ${props => props.theme.colors.background_primary};
     color: ${props => props.theme.colors.text};
 
+    &::placeholder {
+      color: ${props => props.theme.colors.placeholder};
+    }
+
     ${props =>
       props.isFilled &&
       css`
         border-color: ${props.theme.colors.purple};
       `}
-
-    &::placeholder {
-      color: ${props => props.theme.colors.placeholder};
-    }
 
     &:focus {
       outline: 0;

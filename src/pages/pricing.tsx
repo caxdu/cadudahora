@@ -1,6 +1,7 @@
 import { Header } from '../components/Header';
 import { Input } from '../components/Input';
 import { Radio } from '../components/Radio';
+import { TextArea } from '../components/TextArea';
 import { Container, Content } from '../styles/pages/Pricing';
 
 export default function pricing() {
@@ -105,6 +106,32 @@ export default function pricing() {
             name="product"
             title="O que ele oferece ou qual o tipo de produto?"
             placeholder="Frutas frescas"
+          />
+
+          <TextArea
+            title="Fale um pouco mais do seu projeto"
+            name="about"
+            placeholder="É uma empresa que corta e entrega frutas em domicilio de graça."
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>PARA A ENTREGA...</legend>
+
+          <Radio
+            name="brand_manual"
+            title="Este projeto precisa do manual da marca?"
+            options={[
+              { label: 'Sim', value: 'yes' },
+              { label: 'Não', value: 'no' },
+            ]}
+          />
+
+          <TextArea
+            name="material"
+            title="Materiais e itens"
+            subtitle="*Medidas e formatos precisarão ser consultados."
+            placeholder="Cartão de visita, materiais para redes sociais, outdoor..."
           />
         </fieldset>
 

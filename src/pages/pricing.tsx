@@ -1,5 +1,6 @@
 import { Header } from '../components/Header';
 import { Input } from '../components/Input';
+import { Radio } from '../components/Radio';
 import { Container, Content } from '../styles/pages/Pricing';
 
 export default function pricing() {
@@ -47,9 +48,15 @@ export default function pricing() {
         <fieldset>
           <legend>SOBRE O PROJETO</legend>
 
-          <Input type="radio" title="teste" name="teste" value="teste 1" />
-          <Input type="radio" title="teste" name="teste" value="teste 2" />
-          <Input type="radio" title="teste" name="teste" value="teste 3" />
+          <Radio
+            name="project_type"
+            title="Qual o tipo de projeto?"
+            options={[
+              { label: 'Apenas logo', value: 'logo' },
+              { label: 'Redesing', value: 'redesing' },
+              { label: 'Identidade visual', value: 'visual_identity' },
+            ]}
+          />
         </fieldset>
 
         <button type="submit">subimitar</button>

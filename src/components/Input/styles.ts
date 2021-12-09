@@ -27,6 +27,8 @@ export const Container = styled.div<ContainerProps>`
     border: 1px solid ${props => props.theme.colors.subtitle};
     padding: 0 1rem;
     ${props => props.theme.fonts.placeholder};
+    background: ${props => props.theme.colors.background_primary};
+    color: ${props => props.theme.colors.text};
 
     ${props =>
       props.isFilled &&

@@ -49,13 +49,62 @@ export default function pricing() {
           <legend>SOBRE O PROJETO</legend>
 
           <Radio
-            name="project_type"
+            name="type"
             title="Qual o tipo de projeto?"
             options={[
               { label: 'Apenas logo', value: 'logo' },
               { label: 'Redesing', value: 'redesing' },
               { label: 'Identidade visual', value: 'visual_identity' },
             ]}
+          />
+
+          <Radio
+            name="target"
+            title="O projeto é para..."
+            options={[
+              { label: 'Uma empresa', value: 'company' },
+              { label: 'Um produto', value: 'product' },
+              { label: 'Uma marca', value: 'brand' },
+            ]}
+          />
+
+          <Radio
+            name="date"
+            title="Para quando precisa desse projeto?"
+            options={[
+              { label: '15 dias', value: '15' },
+              { label: 'Um mês', value: '30' },
+              { label: 'Dois meses', value: '60' },
+              { label: 'Urgente', value: '10' },
+            ]}
+          />
+
+          <Radio
+            name="budget"
+            title="Qual o seu orçamento para este projeto?"
+            options={[
+              { label: 'Menos de R$1.800', value: '1800' },
+              { label: 'Entre R$7.500 - R$10.000', value: '10.000' },
+              { label: 'Dinheiro não é problema!', value: '20.000' },
+            ]}
+          />
+
+          <Input
+            name="company"
+            title="Qual o nome da Empresa/Produto?"
+            placeholder="Praise de Frutas"
+          />
+
+          <Input
+            name="media"
+            title="Tem site ou alguma rede social?"
+            placeholder="Instagram: @frutasfrescas | Twitter @frutasfrescas"
+          />
+
+          <Input
+            name="product"
+            title="O que ele oferece ou qual o tipo de produto?"
+            placeholder="Frutas frescas"
           />
         </fieldset>
 

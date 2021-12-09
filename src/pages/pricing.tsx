@@ -1,3 +1,4 @@
+import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { Input } from '../components/Input';
 import { Radio } from '../components/Radio';
@@ -135,8 +136,10 @@ export default function pricing() {
           />
         </fieldset>
 
-        <button type="submit">subimitar</button>
+        <button type="submit">ENVIAR ORÇAMENTO</button>
       </Content>
+
+      <Footer />
     </Container>
   );
 }

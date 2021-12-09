@@ -6,6 +6,7 @@ export const Container = styled.div``;
 export const Content = styled(Form)`
   margin-top: 10.625rem;
   padding: 0 22.1875rem;
+  padding-bottom: 5rem;
 
   display: flex;
   flex-direction: column;
@@ -46,6 +47,22 @@ export const Content = styled(Form)`
         border-radius: 24px;
         background: ${props => props.theme.colors.purple};
       }
+    }
+  }
+
+  button {
+    margin-top: 3.375rem;
+    width: 20.625rem;
+    height: 4rem;
+    border-radius: 10px;
+    border: 0;
+    ${props => props.theme.fonts.button}
+    background: ${props => props.theme.colors.purple};
+    color: #fff;
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.8);
     }
   }
 `;

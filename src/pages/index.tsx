@@ -7,6 +7,7 @@ import { Container } from '../styles/pages/Home';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { PricingSection } from '../components/PricingSection';
+import { Footer } from '../components/Footer';
 
 export default function Home() {
   return (
@@ -21,9 +22,7 @@ export default function Home() {
 
       <PricingSection />
 
-      <footer>
-        <p>Carlos Eduardo da Hora Copyright @ 2021</p>
-      </footer>
+      <Footer />
     </Container>
   );
 }

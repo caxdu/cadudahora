@@ -22,6 +22,7 @@ type Slide = {
 type Project = {
   id: string;
   url: string;
+  uid: string;
 };
 
 interface HomeProps {
@@ -69,6 +70,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const projects = projectsResponse.results.map(project => ({
     url: project.data.preview_image.url,
     id: project.id,
+    uid: project.uid,
   }));
 
   return {

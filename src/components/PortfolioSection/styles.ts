@@ -67,9 +67,18 @@ export const PortfolioGrid = styled.main`
   gap: 3.125rem;
 `;
 
-export const PortfolioItem = styled.div<PortfolioItemProps>`
-  aspect-ratio: 1/1;
-  height: 31.8125rem;
-  background: ${props => `url('${props.image}') no-repeat`};
-  background-size: cover;
+export const PortfolioItem = styled.button<PortfolioItemProps>`
+  border: 6px solid ${props => props.theme.colors.background_primary};
+  transition: border 0.4s;
+
+  &:hover {
+    border: 6px solid ${props => props.theme.colors.purple};
+  }
+
+  div {
+    aspect-ratio: 1/1;
+    height: 31.8125rem;
+    background: ${props => `url('${props.image}') no-repeat`};
+    background-size: cover;
+  }
 `;

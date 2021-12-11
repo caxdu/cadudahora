@@ -1,8 +1,11 @@
+import { useRouter } from 'next/router';
+import { useCallback } from 'react';
 import { Container, PortfolioGrid, PortfolioItem } from './styles';
 
 type Project = {
   id: string;
   url: string;
+  uid: string;
 };
 
 interface PortfolioSectionProps {
@@ -10,6 +13,15 @@ interface PortfolioSectionProps {
 }
 
 export function PortfolioSection({ projects }: PortfolioSectionProps) {
+  const { push } = useRouter();
+
+  const redirectToProject = useCallback(
+    uid => {
+      push(`/project/${uid}`);
+    },
+    [push],
+  );
+
   return (
     <Container id="portfolio">
       <h1>&lt; Portfólio</h1>
@@ -17,7 +29,14 @@ export function PortfolioSection({ projects }: PortfolioSectionProps) {
 
       <PortfolioGrid>
         {projects.map(project => (
-          <PortfolioItem key={project.id} image={project.url} />
+          <PortfolioItem
+            type="button"
+            onClick={() => redirectToProject(project.uid)}
+            key={project.id}
+            image={project.url}
+          >
+            <div />
+          </PortfolioItem>
         ))}
       </PortfolioGrid>
 

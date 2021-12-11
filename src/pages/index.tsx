@@ -1,24 +1,44 @@
+import { GetStaticProps } from 'next';
+import Prismic from '@prismicio/client';
+
 import { Header } from '../components/Header';
 import { SliderSection } from '../components/SliderSection';
 import { WhoAmISection } from '../components/WhoAmISection';
 import { PortfolioSection } from '../components/PortfolioSection';
+import { PricingSection } from '../components/PricingSection';
+import { Footer } from '../components/Footer';
+
+import { getPrismicClient } from '../services/prismic';
 
 import { Container } from '../styles/pages/Home';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { PricingSection } from '../components/PricingSection';
-import { Footer } from '../components/Footer';
 
-export default function Home() {
+type Slide = {
+  id: string;
+  url: string;
+};
+
+type Project = {
+  id: string;
+  url: string;
+};
+
+interface HomeProps {
+  slides: Slide[];
+  projects: Project[];
+}
+
+export default function Home({ slides, projects }: HomeProps) {
   return (
     <Container>
       <Header />
 
-      <SliderSection />
+      <SliderSection slides={slides} />
 
       <WhoAmISection />
 
-      <PortfolioSection />
+      <PortfolioSection projects={projects} />
 
       <PricingSection />
 
@@ -26,3 +46,36 @@ export default function Home() {
     </Container>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const prismic = getPrismicClient();
+
+  const slidesResponse = await prismic.query([
+    Prismic.predicates.at('document.type', 'slider_image'),
+  ]);
+
+  const slides = slidesResponse.results.map(slide => ({
+    url: slide.data.image.url,
+    id: slide.id,
+  }));
+
+  const projectsResponse = await prismic.query(
+    [Prismic.predicates.at('document.type', 'project')],
+    {
+      fetch: ['project.preview_image'],
+    },
+  );
+
+  const projects = projectsResponse.results.map(project => ({
+    url: project.data.preview_image.url,
+    id: project.id,
+  }));
+
+  return {
+    props: {
+      slides,
+      projects,
+    },
+    revalidate: 20,
+  };
+};

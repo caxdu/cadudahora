@@ -1,18 +1,24 @@
-import { Container, PortfolioGrid } from './styles';
+import { Container, PortfolioGrid, PortfolioItem } from './styles';
 
-export function PortfolioSection() {
+type Project = {
+  id: string;
+  url: string;
+};
+
+interface PortfolioSectionProps {
+  projects: Project[];
+}
+
+export function PortfolioSection({ projects }: PortfolioSectionProps) {
   return (
     <Container id="portfolio">
       <h1>&lt; Portfólio</h1>
       <h2>É COMO UM ÁLBUM DE FAMÍLIA</h2>
 
       <PortfolioGrid>
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
+        {projects.map(project => (
+          <PortfolioItem key={project.id} image={project.url} />
+        ))}
       </PortfolioGrid>
 
       <footer>

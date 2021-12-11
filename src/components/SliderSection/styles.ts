@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface CarouselItemProps {
+  image: string;
+}
+
 interface SlideIndicatorProps {
   isSelected: boolean;
 }
@@ -90,11 +94,6 @@ export const Container = styled.section`
         height: 100%;
       }
     }
-
-    div.carousel-item {
-      height: 100%;
-      background: gray;
-    }
   }
 `;
 
@@ -107,4 +106,10 @@ export const SliderIndicator = styled.button<SlideIndicatorProps>`
   margin-right: 10px;
   background: ${props => props.isSelected && props.theme.colors.purple};
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+`;
+
+export const CarouselItem = styled.div<CarouselItemProps>`
+  height: 100%;
+  background: ${props => `url(${props.image}) no-repeat`};
+  background-size: cover;
 `;

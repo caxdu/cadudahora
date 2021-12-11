@@ -2,9 +2,19 @@ import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
 import { Carousel } from 'react-responsive-carousel';
-import { Container, SliderIndicator } from './styles';
 
-export function SliderSection() {
+import { CarouselItem, Container, SliderIndicator } from './styles';
+
+type Slide = {
+  id: string;
+  url: string;
+};
+
+interface SliderSectionProps {
+  slides: Slide[];
+}
+
+export function SliderSection({ slides }: SliderSectionProps) {
   const { push } = useRouter();
 
   const handleSeeProjects = useCallback(() => {
@@ -50,17 +60,9 @@ export function SliderSection() {
             <SliderIndicator onClick={onClickHandler} isSelected={isSelected} />
           )}
         >
-          <div className="carousel-item">
-            <p>teste 1</p>
-          </div>
-
-          <div className="carousel-item">
-            <p>teste 2</p>
-          </div>
-
-          <div className="carousel-item">
-            <p>teste 3</p>
-          </div>
+          {slides.map(slide => (
+            <CarouselItem image={slide.url} key={slide.id} />
+          ))}
         </Carousel>
       </aside>
     </Container>

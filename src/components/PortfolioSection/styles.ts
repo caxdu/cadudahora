@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface PortfolioItemProps {
+  image: string;
+}
+
 export const Container = styled.section`
   display: flex;
   flex-direction: column;
@@ -61,10 +65,11 @@ export const PortfolioGrid = styled.main`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3.125rem;
+`;
 
-  div {
-    aspect-ratio: 1/1;
-    height: 31.8125rem;
-    background: grey;
-  }
+export const PortfolioItem = styled.div<PortfolioItemProps>`
+  aspect-ratio: 1/1;
+  height: 31.8125rem;
+  background: ${props => `url('${props.image}') no-repeat`};
+  background-size: cover;
 `;

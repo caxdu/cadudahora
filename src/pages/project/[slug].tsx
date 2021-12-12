@@ -1,8 +1,10 @@
+/* eslint-disable react/no-array-index-key */
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Prismic from '@prismicio/client';
 
 import { RichText } from 'prismic-dom';
 import { getPrismicClient } from '../../services/prismic';
+import { Content, Cover, Image } from '../../styles/pages/Project';
 
 type Project = {
   cover: string;
@@ -18,9 +20,38 @@ interface ProjectProps {
 }
 
 export default function Project({ project }: ProjectProps) {
-  console.log(project);
+  return (
+    <>
+      <Cover image={project.cover} />
 
-  return <h1>Project</h1>;
+      <Content>
+        <main>
+          <h1>
+            <span>&lt;</span>
+            {project.title}
+          </h1>
+
+          <div dangerouslySetInnerHTML={{ __html: project.description }} />
+        </main>
+
+        <aside>
+          <div>
+            <strong>CLIENTE:</strong>
+            <p>{project.client_description}</p>
+          </div>
+
+          <div>
+            <strong>ANO:</strong>
+            <p>{project.year}</p>
+          </div>
+        </aside>
+      </Content>
+
+      {project.images.map((image, index) => (
+        <Image key={index} image={image} />
+      ))}
+    </>
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {

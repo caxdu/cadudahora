@@ -1,5 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Form } from '@unform/web';
+
+interface PersonalityButtonProps {
+  active: boolean;
+}
 
 export const Content = styled(Form)`
   margin-top: 10.625rem;
@@ -46,9 +50,32 @@ export const Content = styled(Form)`
         background: ${props => props.theme.colors.purple};
       }
     }
+
+    section {
+      grid-column: 1 / 3;
+      display: flex;
+      flex-direction: column;
+
+      p {
+        color: ${props => props.theme.colors.text};
+        ${props => props.theme.fonts.button}
+
+        span {
+          color: ${props => props.theme.colors.purple};
+        }
+      }
+
+      div {
+        margin-top: 1.5625rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
   }
 
-  button {
+  > button {
     margin-top: 3.375rem;
     width: 20.625rem;
     height: 4rem;
@@ -62,5 +89,26 @@ export const Content = styled(Form)`
     &:hover {
       filter: brightness(0.8);
     }
+  }
+`;
+
+export const PersonalityButton = styled.button<PersonalityButtonProps>`
+  padding: 1.25rem 1.875rem;
+  border-radius: 0.625rem;
+  background: ${props => props.theme.colors.background_primary};
+  border: 1px solid ${props => props.theme.colors.purple};
+  color: ${props => props.theme.colors.purple};
+  ${props => props.theme.fonts.button};
+
+  ${props =>
+    props.active &&
+    css`
+      background: ${props.theme.colors.purple};
+      color: ${props.theme.colors.background_primary};
+    `};
+
+  &:hover {
+    background: ${props => props.theme.colors.purple};
+    color: ${props => props.theme.colors.background_primary};
   }
 `;

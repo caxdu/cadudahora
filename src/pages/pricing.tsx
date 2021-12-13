@@ -3,11 +3,11 @@ import { Header } from '../components/Header';
 import { Input } from '../components/Input';
 import { Radio } from '../components/Radio';
 import { TextArea } from '../components/TextArea';
-import { Container, Content } from '../styles/pages/Pricing';
+import { Content } from '../styles/pages/Pricing';
 
 export default function pricing() {
   return (
-    <Container>
+    <>
       <Header />
 
       <Content onSubmit={data => console.log(data)}>
@@ -25,7 +25,7 @@ export default function pricing() {
           />
 
           <Input
-            name="whatsapp"
+            name="phone"
             title="Seu número de telefone (WhatsApp):"
             subtitle="Em caso de urgência, irei entrar em contato com você por aqui"
             placeholder="(99) 9.9999-9999"
@@ -140,6 +140,6 @@ export default function pricing() {
       </Content>
 
       <Footer />
-    </Container>
+    </>
   );
 }

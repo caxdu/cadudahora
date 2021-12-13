@@ -10,8 +10,6 @@ import { Footer } from '../components/Footer';
 
 import { getPrismicClient } from '../services/prismic';
 
-import { Container } from '../styles/pages/Home';
-
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 type Slide = {
@@ -32,7 +30,7 @@ interface HomeProps {
 
 export default function Home({ slides, projects }: HomeProps) {
   return (
-    <Container>
+    <>
       <Header />
 
       <SliderSection slides={slides} />
@@ -44,7 +42,7 @@ export default function Home({ slides, projects }: HomeProps) {
       <PricingSection />
 
       <Footer />
-    </Container>
+    </>
   );
 }
 

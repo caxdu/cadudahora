@@ -25,6 +25,15 @@ export const Container = styled.section`
       width: 100%;
       background: url('cadu.jpg') no-repeat;
       background-size: cover;
+      background-position: center;
+    }
+
+    @media (max-width: 1675px) {
+      width: 28.125rem;
+    }
+
+    @media (max-width: 1580px) {
+      display: none;
     }
   }
 
@@ -32,11 +41,27 @@ export const Container = styled.section`
     h1 {
       ${props => props.theme.fonts.title};
       color: ${props => props.theme.colors.purple};
+
+      @media (max-width: 1580px) {
+        text-align: center;
+      }
+
+      @media (max-width: 550px) {
+        font-size: 2.8125rem;
+      }
     }
 
     h2 {
       ${props => props.theme.fonts.subtitle};
       color: ${props => props.theme.colors.subtitle};
+
+      @media (max-width: 1580px) {
+        text-align: center;
+      }
+
+      @media (max-width: 550px) {
+        font-size: 1.25rem;
+      }
     }
 
     p {
@@ -44,6 +69,21 @@ export const Container = styled.section`
       ${props => props.theme.fonts.paragraph};
       color: ${props => props.theme.colors.text};
       width: 62.625rem;
+
+      @media (max-width: 1810px) {
+        width: 56.25rem;
+      }
+
+      @media (max-width: 1690px) {
+        font-size: 1.25rem;
+        width: 50rem;
+      }
+
+      @media (max-width: 1580px) {
+        width: 100%;
+        padding: 0 5%;
+        font-size: 1.5625rem;
+      }
     }
 
     footer {
@@ -71,5 +111,16 @@ export const Container = styled.section`
         }
       }
     }
+
+    @media (max-width: 1580px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 1580px) {
+    padding: 0;
+    justify-content: center;
   }
 `;

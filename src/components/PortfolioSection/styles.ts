@@ -14,6 +14,10 @@ export const Container = styled.section`
   h1 {
     color: ${props => props.theme.colors.purple};
     ${props => props.theme.fonts.title};
+
+    @media (max-width: 600px) {
+      font-size: 3.125rem;
+    }
   }
 
   h2 {
@@ -58,6 +62,11 @@ export const Container = styled.section`
       }
     }
   }
+
+  @media (max-width: 600px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 export const PortfolioGrid = styled.main`
@@ -65,6 +74,14 @@ export const PortfolioGrid = styled.main`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3.125rem;
+
+  @media (max-width: 1700px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 1150px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const PortfolioItem = styled.button<PortfolioItemProps>`

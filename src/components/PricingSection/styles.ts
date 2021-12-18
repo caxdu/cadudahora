@@ -15,6 +15,14 @@ export const Container = styled.section`
     strong {
       color: ${props => props.theme.colors.purple};
     }
+
+    @media (max-width: 630px) {
+      font-size: 2.8125rem;
+    }
+
+    @media (max-width: 520px) {
+      font-size: 2.5rem;
+    }
   }
 
   button {

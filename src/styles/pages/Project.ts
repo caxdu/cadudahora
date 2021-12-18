@@ -45,6 +45,7 @@ export const Content = styled.div`
 
     div {
       ${props => props.theme.fonts.paragraph};
+      color: ${props => props.theme.colors.text};
     }
   }
 `;
